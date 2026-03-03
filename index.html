@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <h1>BMI Calculator</h1>
+
+            <form id="bmiForm" novalidate>
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name">
+                    <small class="error" id="nameError"></small>
+                </div>
+
+                <div class="toggle-wrapper">
+                    <span>cm</span>
+                    <label class="switch">
+                        <input type="checkbox" id="unitToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span>feet / inches</span>
+                </div>
+
+                <div id="metricInputs">
+                    <div class="input-group">
+                        <label for="heightCm">Height (cm)</label>
+                        <input type="number" id="heightCm">
+                        <small class="error" id="heightCmError"></small>
+                    </div>
+                </div>
+
+                <div id="imperialInputs" class="hidden">
+                    <div class="input-group-inline">
+                        <div>
+                            <label for="heightFt">Feet</label>
+                            <input type="number" id="heightFt">
+                            <small class="error" id="heightFtError"></small>
+                        </div>
+                        <div>
+                            <label for="heightIn">Inches</label>
+                            <input type="number" id="heightIn">
+                            <small class="error" id="heightInError"></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="weightKg">Weight (kg)</label>
+                    <input type="number" id="weightKg">
+                    <small class="error" id="weightKgError"></small>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn primary">Calculate</button>
+                    <button type="button" id="resetBtn" class="btn secondary">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="resultSection" class="result-card hidden">
+            <h2 id="resultName"></h2>
+            <p class="bmi-value">BMI: <span id="bmiValue"></span></p>
+            <p class="bmi-category" id="bmiCategory"></p>
+            <p class="interpretation" id="interpretation"></p>
+        </section>
+
+        <section class="history-section">
+            <div class="history-header">
+                <h2>History</h2>
+                <button id="clearHistory" class="btn danger small">Clear History</button>
+            </div>
+            <div id="historyContainer" class="history-grid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
